@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title><?= $pageTitle  ?></title>
+  <meta content="" name="description">
+  <meta name="keywords" content="au theme template">
+
+   <!-- Favicons -->
+   <link rel="icon" type="image/x-icon" href="./assets/img/yazaki.jpg">
+
+  <!-- Sofia Pro -->
+  <link href="http://fonts.cdnfonts.com/css/sofia-pro" rel="stylesheet">
+  
+<!-- Bootstrap CSS-->
+<link href="./vendor/bootstrap/bootstrap.min.css" rel="stylesheet" media="all">
+
+<!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  
+  <!-- Template Main CSS File -->
+  <link href="./assets/css/style1.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center">
+      <div class="container d-flex align-items-center justify-content-between">
+
+          <div class="logo" style="margin-left: -50px; width:400px;">
+            <a href="index-manager.php"><img src="assets/img/yazaki.png" alt="" class="img-fluid"></a>
+          </div>
+          
+        <nav id="navbar" class="navbar" style="margin-left:50px;">
+            <ul>
+              <li><a class="nav-link <?php if($page=='home'){ echo 'active';} ?>" href="./index-manager.php">HOME</a></li>
+              <li class="dropdown"><a href="#" class="nav-link <?php if($page=='IT'){ echo 'active';} ?>" style="text-decoration: none;">IT<i class="fa fa-chevron-down" style="font-size:14px"></i></a>
+                    <ul>
+                    <li><a href="#">Procedures IT</a></li>
+                    <li><a href="#">Formulaire IT</a></li>
+                    <li><a href="#">Web Mail</a></li>
+                    <li><a href="#">Telephone</a></li>
+                    </ul>
+              </li>
+
+              <li class="dropdown"><a href="#"style="text-decoration: none;" class="nav-link <?php if($page=='Procedure-QA'  || $page=='Instruction Qualité' || $page=='Politique' || $page=='YAPT Controle Plan' || $page=='Manuel Qualité'){ echo 'active';} ?>">QUALITY<i class="fa fa-chevron-down" style="font-size:14px"></i></a>
+                    <ul>
+                    <li><a href="./Procedure-QA.php" class="nav-link <?php if($page=='Procedure-QA'){ echo 'active';} ?>">Procedure Qualité</a></li>
+                    <li class="dropdown"><a href="#" class="<?php if($page=='Instruction Qualité'){ echo 'active';} ?>">Instruction Qualité<i class="fa fa-chevron-right"></i></a>
+                        <ul style="margin-left:52px;">
+                        <li><a href="#" class="">Drop Down 3</a></li>
+                        <li><a href="#" class="">Drop Down 4</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#" class="">Politique / Mission et Vision <br> qualité & Certificat IATF 16949</a></li>
+                    <li><a href="#" class="">YAPT Controle Plan</a></li>
+                    <li><a href="#" class="">Manuel Qualité</a></li>
+                    </ul>
+              </li>
+              <li class="dropdown"><a href="#" style="text-decoration: none;">RH<i class="fa fa-chevron-down" style="font-size:14px"></i></a>
+                <ul>
+                  <li><a href="#">Drop Down 1</a></li>
+                  <li><a href="#">Drop Down 2</a></li>
+                  <li><a href="#">Drop Down 3</a></li>
+                  <li><a href="#">Drop Down 4</a></li>
+                </ul>
+              </li>
+              <li class="dropdown"><a href="#" style="text-decoration: none;">FINANCE<i class="fa fa-chevron-down" style="font-size:14px"></i></a>
+                <ul>
+                  <li><a href="#">Drop Down 1</a></li>
+                  <li><a href="#">Drop Down 2</a></li>
+                  <li><a href="#">Drop Down 3</a></li>
+                  <li><a href="#">Drop Down 4</a></li>
+                </ul>
+              </li>
+              <li class="dropdown"><a href="#" style="text-decoration: none;">LOGISTIC<i class="fa fa-chevron-down" style="font-size:14px"></i></a>
+                <ul>
+                  <li><a href="#">Drop Down 1</a></li>
+                  <li><a href="#">Drop Down 2</a></li>
+                  <li><a href="#">Drop Down 3</a></li>
+                  <li><a href="#">Drop Down 4</a></li>
+                </ul>
+              </li>
+              <li class="dropdown"><a href="#" style="text-decoration: none;">PLPP/ENG<i class="fa fa-chevron-down" style="font-size:14px"></i></a>
+                <ul>
+                  <li><a href="#">Drop Down 1</a></li>
+                  <li><a href="#">Drop Down 2</a></li>
+                  <li><a href="#">Drop Down 3</a></li>
+                  <li><a href="#">Drop Down 4</a></li>
+                </ul>
+              </li>
+              <li><a class="dropdown" style="text-decoration: none;" href="#hero">PRODUCTION</a></li>
+            </ul>
+            <i class="bi bi-list mobile-nav-toggle"></i>
+         </nav><!-- .navbar -->
+         &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+          <div class="dropdown text-end" style="margin-right:-90px;">
+              <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+            <img  src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
+              </a> 
+              <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
+                <li><h6><a class="dropdown-item" href="#"><?= $_SESSION['manager_name'] ?></a></h6></li>
+                <li><a class="dropdown-item" href="#"><?= $_SESSION['email_manager'] ?></a></li>
+                <li><a class="dropdown-item" href="#">Profile</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="./logout-manager.php">Logout</a></li>
+              </ul>
+            </div>
+              <div class="b-example-divider"></div>
+    </div>
+  </header>
+  <br>
+      <section id="hero" style="margin-top: 50px;">
+            <!-- Partie dynamique  -->
+            <?php include $template . '.phtml'; ?>
+            <!-- Partie dynamique  -->
+          
+      </section>
+       <!-- Vendor JS Files -->
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

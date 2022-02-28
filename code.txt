@@ -1,0 +1,79 @@
+<!-- code login kdim -->
+<?php 
+session_start();
+if(isset($_POST['sub'])){
+
+$email=htmlspecialchars(trim($_POST['email']));
+$pass=htmlspecialchars(trim($_POST['pass']));
+
+if(empty($email) OR empty($pass)){
+	$erreur="tu doit remplir tous les champs";
+}
+else{
+	if(isset($email) AND !empty($email)){
+		if(isset($pass) AND !empty($pass)){
+			
+			$admin1="wadamossab@gmail.com";
+			$password1="1234";
+		
+				if($email===$admin1 AND $pass===$password1){
+					$_SESSION['admin']=$email;
+					header("Location: ../home-admin.php");
+				}
+				else{
+					$erreur="Email et mot de passe inconnue ! ";
+				}
+		}
+		}	
+	else{
+		$erreur="Verifier votre email";
+		}
+}
+}
+?> 
+
+
+
+  <!-- Button trigger modal -->
+            <button type="button" class="btn" style="background-color:#f30000; color:white;" data-toggle="modal" data-target="#deleteAdmin<?= $manager['id'] ?>">
+            <i class="fas fa-trash"></i>
+            </button>
+                    <!-- Modal -->
+            <div class="modal fade" id="deleteAdmin<?= $manager['id_manager'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel"><?= $manager['manager_name'] ?></h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                    Do you want to delete this manager ?
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <a href="delete-admin.php?id=<?= $manager['id_manager'] ?> type="button" class="btn btn-danger">Delete</a>
+                    </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+ <ul>
+                    <li><a href="./Procedure-QA.php" class="<?php if($page=='Procedure-QA'){ echo 'active';} ?>">Procedure Qualité</a></li>
+                    <li class="dropdown"><a href="#">Instruction Qualité<i class="fa fa-chevron-right"></i></a>
+                        <ul style="margin-left:52px;">
+                        <li><a href="#" class="<?php if($page==''){ echo 'active';} ?>">Drop Down 3</a></li>
+                        <li><a href="#" class="<?php if($page==''){ echo 'active';} ?>">Drop Down 4</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#" class="<?php if($page=='Politique-QA'){ echo 'active';} ?>">Politique / Mission et Vision <br> qualité & Certificat IATF 16949</a></li>
+                    <li><a href="#" class="<?php if($page=='YAPT-Controle-Plan-QA'){ echo 'active';} ?>">YAPT Controle Plan</a></li>
+                    <li><a href="#" class="<?php if($page=='Manuel-Qualité'){ echo 'active';} ?>">Manuel Qualité</a></li>
+                    </ul>
+
+
+
+

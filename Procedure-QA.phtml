@@ -1,0 +1,36 @@
+<br><br><center><h4 style="font-weight: bold;"> Procedures QA YAPT</h4></center>
+ <a href="Add-Procedure-QA.php" class="btn btn-primary add-m" style=" margin-top: 20px; ">Add Procedure</a><br><br>
+<center><table class="table" style="width: 1300px;">
+
+  <thead class="table-dark" >
+    <tr>
+    <th scope="col" >id</th>
+      <th scope="col" >N°</th>
+      <th scope="col" >Document Title</th>
+      <th scope="col" >Document Control Number</th>
+      <th scope="col" >Related documents</th> 
+      <th scope="col" >Issue</th>
+      <th scope="col" colspan="2">Issue Date</th>
+      <th scope="col" >Actions</th>
+    </tr>
+  </thead>
+  <tbody class="tbody">
+  <?php foreach ($procedures_qa as $procedure_qa) : ?>
+                    <tr>
+                    <th scope="row" ><?= $procedure_qa['id_Prod_QA'] ?></th>
+                    <td ><?= $procedure_qa['Num'] ?></td>
+                    <td ><?= $procedure_qa['Document_Title'] ?></td>
+                    <td ><?= $procedure_qa['Document_Control_Number'] ?></td>
+                    <td ><?= $procedure_qa['Related_documents'] ?></td>
+                    <td ><?= $procedure_qa['Issue'] ?></td>
+                    <td ><?= $procedure_qa['Issue_Date'] ?></td>
+                    <td></td>
+                    <td>
+                    <a href="./Edit-Procedure-QA.php?id=<?= $procedure_qa['id_Prod_QA'] ?>" class="btn" style="background-color:#f94a00; color:white;"><i class="bi bi-pencil-square"></i></a>
+                    <a href="./delete-Procedure-QA.php?id=<?= $procedure_qa['id_Prod_QA'] ?>" class="btn" style="background-color:#f30000; color:white;"><i class="bi bi-trash"></i></a>
+                  </td>
+                </tr>
+                <?php endforeach; ?>
+
+  </tbody>
+</table></center>

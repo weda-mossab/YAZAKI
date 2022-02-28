@@ -1,0 +1,45 @@
+<div class="main-content" style="background: #cecece; height:700px; font-weight:bold;font-family: 'Sofia Pro', sans-serif;">
+    <div class="section__content section__content--p30" style="margin-top:-10px;">
+        <div class="container-fluid" ><br>
+        <h2 class="title-1 m-b-25" style="color:black; font-weight:bold;"><center>Add Procedure</center> </h2>
+
+        <center>
+            <form enctype="multipart/form-data" action="<?= $_SERVER['PHP_SELF'] ?>" method="post" >
+        <div class="form-group">
+    <label for="exampleInputEmail1" style="color:black;margin-left:-362px;">Num</label>
+    <input type="number"   class="form-control" name="Num" id="exampleInputEmail1"  placeholder="Enter Num" value="<?= $Num ?>" style="width:400px;">
+    <small class="text-danger"><?= array_key_exists('Num', $errors) ? $errors['Num'] : '' ?></small>
+  </div>
+  <br><div class="form-group">
+    <label for="exampleInputEmail1" style="color:black;margin-left:-290px;">Document Title</label>
+    <input type="text" class="form-control" name="Document_Title" id="exampleInputEmail1"  placeholder="Enter Document Title" value="<?= $Document_Title ?>" style="width:400px;">
+    <small class="text-danger"><?= array_key_exists('Document_Title', $errors) ? $errors['Document_Title'] : '' ?></small>
+  </div>
+  <br><div class="form-group">
+    <label for="exampleInputEmail1" style="color:black;margin-left:-202px;">Document Control Number</label>
+    <input type="text"   class="form-control" name="Document_Control_Number" id="exampleInputEmail1"  placeholder="Enter Document Control Number" value="<?= $Document_Control_Number ?>" style="width:400px;">
+    <small class="text-danger"><?= array_key_exists('Document_Control_Number', $errors) ? $errors['Document_Control_Number'] : '' ?></small>
+  </div>
+  <br><div class="form-group">
+    <label for="exampleInputPassword1" style="color:black;margin-left:-260px;">Related documents</label>
+    <input type="text" class="form-control" name="Related_documents" id="exampleInputPassword1" placeholder="Enter Related documents" value="<?= $Related_documents ?>" style="width:400px;">
+    <small class="text-danger"><?= array_key_exists('Related_documents', $errors) ? $errors['Related_documents'] : '' ?></small>
+  </div>
+  <br><div class="form-group">
+    <label for="exampleInputPassword1" style="color:black;margin-left:-360px;">Issue</label>
+    <input type="text" class="form-control" name="Issue" id="exampleInputPassword1" placeholder="Enter Issue" value="<?= $Issue ?>" style="width:400px;">
+    <small class="text-danger"><?= array_key_exists('Issue', $errors) ? $errors['Issue'] : '' ?></small>
+  </div>
+  <br><div class="form-group">
+    <label for="exampleInputPassword1" style="color:black;margin-left:-315px;">Date Issue</label>
+    <input type="date" class="form-control" name="Issue_Date" id="exampleInputPassword1" placeholder="Enter Issue Date" value="<?= $Issue_Date ?>" style="width:400px;">
+    <small class="text-danger"><?= array_key_exists('Issue_Date', $errors) ? $errors['Issue_Date'] : '' ?></small>
+  </div><br>
+  <button type="submit" name="submit" class="btn btn-primary"><i class="bi bi-send"></i>  Submit</button>
+  <button type="reset" class="btn btn-dark" style="margin-left:20px;"><i class="bi bi-x-square"></i>  Cancel</button>
+</form>
+</center>
+        </div>
+    </div>
+</div>
+      

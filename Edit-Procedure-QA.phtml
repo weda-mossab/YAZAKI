@@ -1,0 +1,46 @@
+<div class="main-content" style="background: #cecece; height:125%;font-weight:bold;font-family: 'Sofia Pro', sans-serif;">
+    <div class="section__content section__content--p30" style="margin-top:-10px;">
+        <div class="container-fluid" ><br>
+        <h2 class="title-1 m-b-25" style="color:black; font-weight:bold;"><center>Edit Procedure</center> </h2><br>
+<br>
+            <center>
+            <form action="<?= $_SERVER['PHP_SELF'] . '?id=' . $_GET['id'] ?>" method="post" style="margin-top:-50px;">
+            <input type="hidden" name="id_Prod_QA" value="<?= $procedure_qa['id_Prod_QA'] ?>">
+        <div class="form-group">
+    <label for="exampleInputEmail1" style="color:black;margin-left:-362px; font-family: 'Sofia Pro', sans-serif;">Num</label>
+    <input type="text"  class="form-control" name="Num" id="exampleInputEmail1" placeholder="Enter Num" value="<?= $procedure_qa['Num'] ?>"  style="width:400px;">
+    <small class="text-danger"><?= array_key_exists('Num', $errors) ? $errors['Num'] : '' ?></small>
+  </div>
+  <br><div class="form-group">
+    <label for="exampleInputEmail1" style="color:black;margin-left:-290px;font-family: 'Sofia Pro', sans-serif;">Document Title</label>
+    <input type="text"  class="form-control" name="Document_Title" id="exampleInputEmail1"  placeholder="Enter Document Title" value="<?= $procedure_qa['Document_Title'] ?>" style="width:400px;">
+    <small class="text-danger"><?= array_key_exists('Document_Title', $errors) ? $errors['Document_Title'] : '' ?></small>
+  </div>
+  <br><div class="form-group" >
+    <label for="exampleInputEmail1" style="color:black;margin-left:-202px;font-family: 'Sofia Pro', sans-serif;">Document Control Number</label>
+    <input type="text"  class="form-control" name="Document_Control_Number" id="exampleInputEmail1"  placeholder="Enter Document Control Number" value="<?= $procedure_qa['Document_Control_Number'] ?>" style="width:400px;">
+    <small class="text-danger"><?= array_key_exists('Document_Control_Number', $errors) ? $errors['Document_Control_Number'] : '' ?></small>
+  </div>
+  <br><div class="form-group">
+    <label for="exampleInputPassword1" style="color:black;margin-left:-260px;font-family: 'Sofia Pro', sans-serif;">Related documents</label>
+    <input type="text"  class="form-control" name="Related_documents" id="exampleInputPassword1" placeholder="Enter Related documents" value="<?= $procedure_qa['Related_documents'] ?>" style="width:400px;">
+    <small class="text-danger"><?= array_key_exists('Related_documents', $errors) ? $errors['Related_documents'] : '' ?></small>
+  </div>
+  <br><div class="form-group">
+    <label for="exampleInputPassword1" style="color:black;margin-left:-360px;font-family: 'Sofia Pro', sans-serif;"> Issue </label><br>
+    <input type="text" class="form-control"  name="Issue" id="exampleInputPassword1" value="<?= $procedure_qa['Issue'] ?>" style="width:400px;">
+    <small class="text-danger"><?= array_key_exists('Issue', $errors) ? $errors['Issue'] : '' ?></small>
+  </div>
+  <br><div class="form-group">
+    <label for="exampleInputPassword1" style="color:black;margin-left:-315px;font-family: 'Sofia Pro', sans-serif;"> Issue_Date </label><br>
+    <input type="date" class="form-control"  name="Issue_Date" id="exampleInputPassword1" value="<?= $procedure_qa['Issue_Date'] ?>" style="width:400px;">
+    <small class="text-danger"><?= array_key_exists('Issue_Date', $errors) ? $errors['Issue_Date'] : '' ?></small>
+  </div><br>  
+  <button type="submit" name="submit" class="btn btn-primary" ><i class="bi bi-send"></i>  Submit</button>
+  <button type="reset" class="btn btn-dark" style="margin-left:20px;"><i class="bi bi-x-square"></i> Cancel</button>
+</form>
+</center>
+        </div>
+    </div>
+</div>
+      

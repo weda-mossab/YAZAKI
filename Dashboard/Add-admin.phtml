@@ -1,0 +1,49 @@
+<div class="main-content" style="background: #cecece; height:130%;font-weight:bold;font-family: 'Sofia Pro', sans-serif;margin-top:-30px;">
+    <div class="section__content section__content--p30" style="margin-top:-70px;">
+        <div class="container-fluid">
+        <h2 class="title-1 m-b-25" style="color:black; font-weight:bold;"><center>Add Admin</center> </h2>
+        <?php if (count($err_nb) > 0) : ?>
+	 <center><div class="alert alert-danger alert-dismissible fade show" role="alert" style="width:400px;">
+
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			</button>
+			<?= $err_nb['res'] ?> 
+	</div></center>
+<?php endif; ?>
+<br><br>
+        <center>
+            <form enctype="multipart/form-data" action="<?= $_SERVER['PHP_SELF'] ?>" method="post" style="margin-top:-50px;">
+        <div class="form-group">
+    <label for="exampleInputEmail1" style="color:black;margin-left:-325px;">Full Name</label>
+    <input type="text" required class="form-control" name="admin_name" id="exampleInputEmail1"  placeholder="Enter Full Name" value="<?= $admin_name ?>" style="width:400px;">
+    <small class="text-danger"><?= array_key_exists('admin_name', $errors) ? $errors['admin_name'] : '' ?></small>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1" style="color:black;margin-left:-295px;">Email address</label>
+    <input type="email" required class="form-control" name="email" id="exampleInputEmail1"  placeholder="Enter email" value="<?= $email ?>" style="width:400px;">
+    <small class="text-danger"><?= array_key_exists('email', $errors) ? $errors['email'] : '' ?></small>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1" style="color:black;margin-left:-295px;">Phone Number</label>
+    <input type="text" required class="form-control" name="Tel" id="exampleInputEmail1"  placeholder="Enter Phone Number" value="<?= $Tel ?>" style="width:400px;">
+    <small class="text-danger"><?= array_key_exists('Tel', $errors) ? $errors['Tel'] : '' ?></small>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1" style="color:black;margin-left:-327px;">Password</label>
+    <input type="password" required class="form-control" name="password" id="exampleInputPassword1" placeholder="Password" value="<?= $password ?>" style="width:400px;">
+    <small class="text-danger"><?= array_key_exists('password', $errors) ? $errors['password'] : '' ?></small>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1" style="color:black;margin-left:-345px;">Avatar </label><br>
+    <input  required accept="image/png, image/gif, image/jpeg" type="file" name="avatar" id="exampleInputPassword1" value="<?= $avatar ?>" style="width:400px;">
+    <small class="text-danger"><?= array_key_exists('avatar', $errors) ? $errors['avatar'] : '' ?></small>
+  </div>
+  <button type="submit" name="submit" class="btn btn-primary" style="margin-left:40px;">Submit</button>
+  <button type="reset" class="btn btn-dark" style="margin-left:20px;"><i class="bi bi-x-square"></i> Cancel</button>
+</form>
+</center>
+        </div>
+    </div>
+</div>
+      
