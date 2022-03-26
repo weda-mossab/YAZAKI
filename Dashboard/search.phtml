@@ -1,0 +1,70 @@
+<div class="main-content" style="background: #cecece; height:130%;font-weight:bold;font-family: 'Sofia Pro', sans-serif;margin-top:-30px;">
+    <div class="section__content section__content--p30" style="margin-top:-70px;">
+        <div class="container-fluid">
+        <?php if($r!=0 || $r1!=0 || $r2!=0){ ?>
+<table class="table table-dark table-hover" style="margin-left:0px;">
+                    <thead>
+                        <tr>
+                            <th scope="col">id</th>
+                            <th scope="col">Full Name</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Password</th>
+                            <th scope="col">Contact</th>
+                            <th scope="col">Image</th>
+                            <th scope="col">Role</th>
+                        </tr>
+                    </thead>
+                <tbody>
+<?php while($data=$res->fetch()){ ?>
+                    <tr>
+                        <th scope="row"><?= $data['id'] ?></th>
+                            <td><?= $data['admin_name'] ?></td>
+                            <td><?= $data['email'] ?></td>
+                            <td><?= $data['password'] ?></td>
+                            <td><?= $data['Tel'] ?></td>
+                            <td><img src="./uploads/<?= $data['avatar'] ?>" style="width:70px;height:70px;"></td>
+                            <td>Admin</td>
+                    </tr>
+<?php } ?>
+<?php while($data=$res1->fetch()){ ?>
+                    <tr>
+                        <th scope="row"><?= $data['id_manager'] ?></th>
+                            <td><?= $data['manager_name'] ?></td>
+                            <td><?= $data['email_manager'] ?></td>
+                            <td><?= $data['password_manager'] ?></td>
+                            <td><?= $data['Tel_manager'] ?></td>
+                            <td><img src="./uploads/<?= $data['avatar_manager'] ?>" style="width:70px;height:70px;"></td>
+                            <td>Manager</td>
+                    </tr>
+<?php } ?>
+<?php while($data=$res2->fetch()){ ?>
+                    <tr>
+                        <th scope="row"><?= $data['id_user'] ?></th>
+                            <td><?= $data['user_name'] ?></td>
+                            <td><?= $data['email_user'] ?></td>
+                            <td><?= $data['password_user'] ?></td>
+                            <td><?= $data['Tel_user'] ?></td>
+                            <td><img src="./uploads/<?= $data['avatar_user'] ?>" style="width:70px;height:70px;"></td>
+                            <td>User</td>
+                    </tr>
+<?php } ?>
+
+                </tbody>
+</table>
+        <?php } ?>
+
+
+        <?php if(!$r && !$r1 && !$r2){ ?>
+         <center>
+             <div class="alert alert-danger alert-dismissible fade show" role="alert" style="width:400px;">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                    Not founded data !
+            </div>
+        </center>
+        <?php }?>   
+        
+             </div>
+        </div>
+    </div>

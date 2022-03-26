@@ -204,6 +204,11 @@
                         <div class="header-wrap">
                             <form class="form-header" action="search.php" method="POST">
                                 <input class="au-input au-input--xl" type="text" name="search" placeholder="Search for datas &amp; reports..." />
+                                <select name="search_type" class="au-btn--submit" style="color:white;"> 
+                                    <option value="0">Name</option>
+                                    <option value="1">Email</option>
+                                    <option value="2">Phone</option>
+                                </select>
                                 <button class="au-btn--submit" type="submit">
                                     <i class="zmdi zmdi-search"></i>
                                 </button>
@@ -232,7 +237,7 @@
                                                 </div>
                                             </div>
                                                 <div class="account-dropdown__item">
-                                                    <a href="#">
+                                                    <a href="Account.php">
                                                     <i class="fas fa-user-circle"></i>Account</a>
                                                 </div>
                                             <div class="account-dropdown__footer">

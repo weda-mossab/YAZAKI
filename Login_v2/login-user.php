@@ -39,7 +39,7 @@ if (isset($_POST['submit1'])) {
             $_SESSION['id_user'] = $user['id_user'];
             $_SESSION['email_user'] = $user['email_user'];
             $_SESSION['user_name'] = $user['user_name'];
-            $_SESSION['avatar_user'] = $user['avatar'];
+            $_SESSION['avatar_user'] = $user['avatar_user'];
             $_SESSION['Tel_user'] = $user['Tel_user'];
             $_SESSION['department'] = $user['department'];
             header('Location: ../user/landing-page.php');

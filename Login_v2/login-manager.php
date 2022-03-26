@@ -39,7 +39,7 @@ if (isset($_POST['submit'])) {
             $_SESSION['id_manager'] = $manager['id_manager'];
             $_SESSION['email_manager'] = $manager['email_manager'];
             $_SESSION['manager_name'] = $manager['manager_name'];
-            $_SESSION['avatar_manager'] = $manager['avatar'];
+            $_SESSION['avatar_manager'] = $manager['avatar_manager'];
             $_SESSION['Tel_manager'] = $manager['Tel_manager'];
             $_SESSION['department'] = $manager['department'];
             header('Location: ../index-manager.php');

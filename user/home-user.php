@@ -1,5 +1,11 @@
 <?php
-
+include '../connexion.php';
+session_start();
+if (!isset($_SESSION['email_user'])) {
+  header('Location: ../Login_v2/login-user.php');
+  exit();
+}
+ 
 $template='home-user';
 $pageTitle = 'Home';
 $page = 'Home';

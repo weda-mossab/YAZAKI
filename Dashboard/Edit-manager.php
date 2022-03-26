@@ -38,6 +38,9 @@ if (!empty($_POST)) {
     if (empty($Tel_manager)) {
         $errors1['Tel_manager'] = 'Phone Number is required';
     }
+    if (empty($department)) {
+        $errors1['department'] = 'department is required';
+    }
     if (empty($password_manager)) {
         $errors1['password_manager'] = 'password_manager is required';
     }
@@ -53,6 +56,7 @@ if (!empty($_POST)) {
                     email_manager = :email_manager,
                     Tel_manager = :Tel_manager,
                     password_manager = :password_manager,
+                    department = :department,
                     avatar_manager = :avatar_manager
                 WHERE id_manager = :id_manager";
         $query = $con->prepare($sql);
@@ -61,6 +65,7 @@ if (!empty($_POST)) {
         $query->bindValue(':Tel_manager', $Tel_manager);
         $query->bindValue(':password_manager', $password_manager);
         $query->bindValue(':avatar_manager', $avatar_manager);
+        $query->bindValue(':department', $department);
         $query->bindValue(':id_manager', $id_manager);
         $query->execute();
 

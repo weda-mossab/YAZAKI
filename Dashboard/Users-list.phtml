@@ -1,4 +1,4 @@
-<div class="main-content" style="margin-top:-20px;">
+<div class="main-content" style="margin-top:-30px;">
     <div class="section__content section__content--p30" >
         <div class="container-fluid">
             <h2 class="title-1 m-b-25" style="color:black; font-weight:bold;margin-top:-50px"><center>users List</center> </h2>
@@ -25,12 +25,12 @@
                             <td><?= $user['password_user'] ?></td>
                             <td><?= $user['department'] ?></td>
                             <td><?= $user['Tel_user'] ?></td>
-                            <td><img src="./uploads/<?= $user['avatar_user'] ?>" alt=""></td>
+                            <td><img src="./uploads/<?= $user['avatar_user'] ?>" alt="" style="width:100px;"></td>
                             <td>
                                     <a href="./Edit-user.php?id=<?= $user['id_user'] ?>"  class="btn" style="background-color:#f94a00; color:white;"><i class="fas fa-edit"></i></a>
                                     <a href="./delete-user.php?id=<?= $user['id_user'] ?>"  class="btn" style="background-color:#f30000; color:white;"><i class="fas fa-trash"></i></a>
                                     <!-- Button trigger modal -->
-                                    <button type="button" class="btn btn-secondary" style="color:white;" data-bs-toggle="modal" data-bs-target="#deleteuser<?= $user['id_user'] ?>"><i class="fas fa-trash"></i></button>
+                                    <!-- <button type="button" class="btn btn-secondary" style="color:white;" data-bs-toggle="modal" data-bs-target="#deleteuser $user'id_user']"><i class="fas fa-trash"></i></button> -->
                                     <!-- Modal -->
                                     <div class="modal fade" id="deleteuser<?= $user['id_user'] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog">

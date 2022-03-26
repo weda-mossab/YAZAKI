@@ -1,43 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+include '../connexion.php';
 
-<head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+session_start();
+if (!isset($_SESSION['email_user'])) {
+  header('Location: ../Login_v2/login-user.php');
+  exit();
+}
+$query = $con->prepare("SELECT * FROM instructions_qa  ORDER BY id_Ins");
+$query->execute();
+$instructions_qa = $query->fetchAll();
 
-  <title><?= $pageTitle ?></title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+$page = 'instructions QA';
+$pageTitle = 'instructions QA';
+include './layout-user.phtml';
+?>
 
-   <!-- Favicons -->
-   <link rel="icon" type="image/x-icon" href="../assets/img/yazaki.jpg">
-
-<!-- Sofia Pro -->
-<link href="http://fonts.cdnfonts.com/css/sofia-pro" rel="stylesheet">
-  
-<!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <!-- Vendor CSS Files -->
-  <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
-  <!-- Template Main CSS File -->
-  <link href="css2/user.css" rel="stylesheet">
-
-  <!-- =======================================================
-  * Template Name: Ninestars - v4.7.0
-  * Template URL: https://bootstrapmade.com/ninestars-free-bootstrap-3-theme-for-creative/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
-</head>
-<body>
-  <!-- ======= Header ======= -->
 <header id="header" class="fixed-top d-flex align-items-center">
       <div class="container d-flex align-items-center justify-content-between">
 
@@ -49,20 +26,21 @@
             <ul>
               <li><a class="nav-link <?php if($page=='Home'){ echo 'active';} ?>" href="home-user.php">HOME</a></li>
               <li class="dropdown"><a href="#" style="text-decoration: none;">IT<i class="fa fa-chevron-down" style="font-size:14px"></i></a>
-                    <ul>
+                <ul>
                     <li><a href="#">IT Procedures </a></li>
                     <li><a href="#">IT Form</a></li>
                     <li><a href="#">Web Mail</a></li>
                     <li><a href="#">Phone</a></li>
-                    </ul>
+                </ul>
              </li>
-             <li class="dropdown"><a href="#" style="text-decoration: none;" class="nav-link <?php if($page=='Procedures QA'  || $page=='Insructions QA' || $page=='Politique' || $page=='YAPT Controle Plan' || $page=='Manual Qualité'){ echo 'active';} ?>">QUALITY<i class="fa fa-chevron-down" style="font-size:14px"></i></a>
-             <ul>
-                    <li><a href="./Instructions-qa.php" class="nav-link <?php if($page=='Insructions QA'){ echo 'active';} ?>">Instruction Qualité</a></li>
-                    <li class="dropdown"><a href="#" class="nav-link <?php if($page=='Procedures QA' || $page=='Cutting QA'){ echo 'active';} ?>">Procedure Qualité<i class="fa fa-chevron-right"></i></a>
+
+              <li class="dropdown"><a href="Procedures-qa.php"style="text-decoration: none;" class="nav-link <?php if($page=='Procedure QA'  || $page=='Instruction Qualité' || $page=='Politique' || $page=='YAPT Controle Plan' || $page=='Manual Qualité'){ echo 'active';} ?>">QUALITY<i class="fa fa-chevron-down" style="font-size:14px"></i></a>
+                    <ul>
+                    <li><a href="#" class="<?php if($page=='Instruction Qualité'){ echo 'active';} ?>">Instruction Qualité</a></li>
+                    <li class="dropdown"><a href="#" class="<?php if($page=='Procedures QA'){ echo 'active';} ?>"> Procedure Qualité<i class="fa fa-chevron-right"></i></a>
                         <ul style="margin-left:52px;">
-                          <li><a href="#" class="">Cutting Procedures</a></li>
-                          <li><a href="Procedures-qa.php" class="nav-link <?php if($page=='Procedures QA'){ echo 'active';} ?>">Global Quality Strandard</a></li>
+                        <li><a href="#" class="">Cutting Procedures</a></li>
+                        <li><a href="Procedures-qa.php" class="<?php if($page=='Procedures QA'){ echo 'active';} ?>">Global Quality Strandard</a></li>
                         </ul>
                     </li>
                     <li><a href="#" class="<?php if($page=='Politique'){ echo 'active';} ?>">Politique / Mission et Vision <br> qualité & Certificat IATF 16949</a></li>
@@ -105,7 +83,7 @@
          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
           <div class="dropdown text-end" style="margin-right:-50px;">
               <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-            <img  src="../Dashboard/uploads/<?= $_SESSION['avatar_user'] ?>" alt="mdo" width="32" height="32" class="rounded-circle">
+            <img  src="./Dashboard/uploads/<?= $_SESSION['avatar_user'] ?>" alt="mdo" width="32" height="32" class="rounded-circle">
               </a> 
               <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
                 <li><h6><a class="dropdown-item" href="#"><?= $_SESSION['user_name'] ?></a></h6></li>
@@ -115,25 +93,32 @@
                 <li><a class="dropdown-item" href="./logout-user.php">Logout</a></li>
               </ul>
             </div>
-              <div class="b-example-divider"></div>
+            <div class="b-example-divider"></div>
     </div>
   </header>
+  <br>
+      <section id="hero" style=" margin-top: 50px;">
 
+      <br><br><center><h4 style="font-weight: bold;"> Instructions QA YAPT</h4></center><br>
+<center><table class="table" style="width: 1300px;font-family:'Sofia Pro', sans-serif;">
 
+<thead class="table-dark">
+    <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Title</th>
+        <th scope="col">N°</th>
+    </tr>
+</thead>
+<tbody class="tbody">
+  <?php foreach ($instructions_qa as $instruction_qa) : ?>
+                <tr>
+                    <th scope="row"><?= $instruction_qa['id_Ins'] ?></th>
+                    <td><?= $instruction_qa['Title'] ?></td>
+                    <td><?= $instruction_qa['Num'] ?></td>
+                </tr>
+  <?php endforeach; ?>
+</tbody>
+</table></center>
 
-      <!-- Vendor JS Files -->
-      <script src="../assets/vendor/aos/aos.js"></script>
-  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="../assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="../assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="../assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="../assets/vendor/php-email-form/validate.js"></script>
+</section>
 
-  <!-- Template Main JS File -->
-  <script src="../assets/js/main.js"></script>
-
-</body>
-
-</html>   
-
- 

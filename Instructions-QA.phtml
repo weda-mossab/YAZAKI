@@ -1,0 +1,27 @@
+<br><br><center><h4 style="font-weight: bold;"> Instructions QA YAPT</h4></center>
+ <a href="Add-Procedure-QA.php" class="btn btn-primary add-m" style=" margin-top: 20px; ">Add Instruction</a><br><br>
+<center><table class="table" style="width: 1300px;">
+
+  <thead class="table-dark">
+    <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Title</th>
+        <th scope="col">N°</th>
+        <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody class="tbody">
+  <?php foreach ($Instructions_qa as $Instruction_qa) : ?>
+                    <tr>
+                    <th scope="row"><?= $Instruction_qa['id_Ins'] ?></th>
+                    <td><?= $Instruction_qa['Title'] ?></td>
+                    <td><?= $Instruction_qa['Num'] ?></td>
+                    <td>
+                    <a href="" class="btn" style="background-color:#f94a00; color:white;"><i class="bi bi-pencil-square"></i></a>
+                    <a href="" class="btn" style="background-color:#f30000; color:white;"><i class="bi bi-trash"></i></a>
+                    </td>
+                </tr>
+                <?php endforeach; ?>
+
+  </tbody>
+</table></center>

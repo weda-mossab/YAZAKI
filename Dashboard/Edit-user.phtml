@@ -1,0 +1,51 @@
+
+<div class="main-content" style="background: #cecece; height:130%;font-weight:bold;font-family: 'Sofia Pro', sans-serif;margin-top:-30px;">
+    <div class="section__content section__content--p30" style="margin-top:-70px;">
+        <div class="container-fluid">
+        <h2 class="title-1 m-b-25" style="color:black; font-weight:bold;"><center>Edit User</center> </h2><br>
+
+        <center>
+            <form enctype="multipart/form-data" action="<?= $_SERVER['PHP_SELF'] . '?id=' . $_GET['id'] ?>" method="post" style="margin-top:-50px;">
+            <input type="hidden" name="id" value="<?= $user['id_user'] ?>">
+            <div class="form-group">
+    <label for="exampleInputEmail1" style="color:black;margin-left:-325px;">Full Name</label>
+    <input type="text" required class="form-control" name="user_name" id="exampleInputEmail1"  placeholder="Enter Full Name" value="<?= $user['user_name'] ?>" style="width:400px;">
+    <small class="text-danger"><?= array_key_exists('user_name', $errors1) ? $errors1['user_name'] : '' ?></small>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1" style="color:black;margin-left:-295px;">Email address</label>
+    <input type="email" required class="form-control" name="email_user" id="exampleInputEmail1"  placeholder="Enter email" value="<?= $user['email_user'] ?>" style="width:400px;">
+    <small class="text-danger"><?= array_key_exists('email_user', $errors1) ? $errors1['email_user'] : '' ?></small>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1" style="color:black;margin-left:-290px;">Phone Number</label>
+    <input type="text" required class="form-control" name="Tel_user" id="exampleInputEmail1"  placeholder="Enter Phone Number" value="<?= $user['Tel_user'] ?>" style="width:400px;">
+    <small class="text-danger"><?= array_key_exists('Tel_user', $errors1) ? $errors1['Tel_user'] : '' ?></small>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1" style="color:black;margin-left:-180px;">Department</label>
+    <select name="department" id="cars" value="<?= $user['department'] ?>">
+    <option value="IT">IT</option>
+    <option value="QUALITY">QUALITY</option>
+    <option value="HR">HR</option>
+    <option value="PRODUCTION">PRODUCTION</option>
+  </select>
+    <small class="text-danger"><?= array_key_exists('department', $errors1) ? $errors1['department'] : '' ?></small>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1" style="color:black;margin-left:-327px;">Password</label>
+    <input type="password" required class="form-control" name="password_user" id="exampleInputPassword1" placeholder="Password" value="<?= $user['password_user'] ?>" style="width:400px;">
+    <small class="text-danger"><?= array_key_exists('password_user', $errors1) ? $errors1['password_user'] : '' ?></small>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1" style="color:black;margin-left:-350px;">Avatar </label><br>
+    <input  required accept="image/png, image/gif, image/jpeg" type="file" name="avatar_user" id="exampleInputPassword1" value="<?= $user['avatar_user'] ?>" style="width:400px;">
+    <small class="text-danger"><?= array_key_exists('avatar_user', $errors1) ? $errors1['avatar_user'] : '' ?></small>
+  </div><br>
+  <button type="submit" name="submit" class="btn btn-primary" style="margin-left:40px;">Submit</button>
+  <button type="reset" class="btn btn-secondary" style="margin-left:20px;"><i class="bi bi-x-square"></i> Cancel</button>
+</form>
+</center><br>
+        </div>
+    </div>
+</div>
